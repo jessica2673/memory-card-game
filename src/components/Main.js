@@ -3,20 +3,12 @@ import Card from './Card';
 import Score from "./Score";
 
 const Main = () => {
-    const cardsArr = ["A", "B", "C", "D", "E", "F"];
+    const [cardsArr, setCardsArr] = useState(["A", "B", "C", "D", "E", "F"]);
     let [cardsVisited, setCardsVisited] = useState([]);
     const [score, setScore] = useState(0);
     const [best, setBest] = useState(0);
 
-    const printCards = () => {
-        const arr = cardsArr.map((card) => (
-            <Card title={card} key={cardsArr.indexOf(card)} handleClick={click}/>
-        ));
-        return arr;
-    }
-
     const click = (e) => {
-        console.log(cardsVisited);
         if(cardsVisited.includes(e.target.textContent)) {
             restart();
         } else {
@@ -30,6 +22,39 @@ const Main = () => {
             setBest(score);
         }
         setScore(0);
+    }
+
+    useEffect(() => {
+        const shuffleCards = async () => {
+            const temp = [];
+            const newCardsArr = [];
+    
+            while(temp.length < cardsArr.length) {
+                let index = await generate(temp);
+                temp.push(index);
+                newCardsArr.concat(cardsArr[index]);
+            }
+            console.log(temp);
+            setCardsArr(newCardsArr);
+        };
+        shuffleCards();
+    }, []);
+
+    const generate = async (temp) => {
+        let random = (Math.random() * 6).toFixed(0);
+        console.log(random);
+        if(temp.includes(await random)) {
+            generate(temp);
+        } else {
+            return random;
+        }
+    }
+
+    const printCards = () => {
+        const arr = (cardsArr).map((card) => (
+            <Card title={card} key={cardsArr.indexOf(card)} handleClick={click}/>
+        ));
+        return arr;
     }
 
     return (

@@ -1,20 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import Card from './Card';
 import Score from "./Score";
+import data from './CardImg';
 
 const Main = () => {
-    const [cardsArr, setCardsArr] = useState(["A", "B", "C", "D", "E", "F"]);
-    let [cardsVisited, setCardsVisited] = useState([]);
-    let index = 0;
+    const [cardsArr, setCardsArr] = useState(data); //stored as their file name
+    let [cardsVisited, setCardsVisited] = useState([]); //stored as their alt text
     const [score, setScore] = useState(0);
     const [best, setBest] = useState(0);
+    let index = 0;
     const randomized = useRef(false);
 
     const click = (e) => {
-        if(cardsVisited.includes(e.target.textContent)) {
+        if(cardsVisited.includes(e.target.alt)) {
             restart();
         } else {
-            setCardsVisited(cardsVisited.concat(e.target.textContent));
+            setCardsVisited(cardsVisited.concat(e.target.alt));
             setScore(score + 1);
         }
         shuffleCards();
@@ -55,7 +56,7 @@ const Main = () => {
 
     const printCards = () => {
         const arr = (cardsArr).map((card) => (
-            <Card title={card} key={cardsArr.indexOf(card)} handleClick={click}/>
+            <Card title={card} source={card} key={cardsArr.indexOf(card)} handleClick={click}/>
         ));
         return arr;
     }

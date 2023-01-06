@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Card from './Card';
 import Score from "./Score";
 
@@ -7,6 +7,7 @@ const Main = () => {
     let [cardsVisited, setCardsVisited] = useState([]);
     const [score, setScore] = useState(0);
     const [best, setBest] = useState(0);
+    const randomized = useRef(false);
 
     const click = (e) => {
         if(cardsVisited.includes(e.target.textContent)) {
@@ -22,31 +23,32 @@ const Main = () => {
             setBest(score);
         }
         setScore(0);
+        setCardsVisited([]);
     }
 
     useEffect(() => {
+        if(randomized.current) return;
         const shuffleCards = async () => {
-            const temp = [];
-            const newCardsArr = [];
+            randomized.current = true;
+            let newCardsArr = [];
     
-            while(temp.length < cardsArr.length) {
-                let index = await generate(temp);
-                temp.push(index);
-                newCardsArr.concat(cardsArr[index]);
+            while(newCardsArr.length < cardsArr.length) {
+                let index =  await generate(newCardsArr);
+                await newCardsArr.push(cardsArr[index]);
+                await console.log(newCardsArr);
             }
-            console.log(temp);
-            setCardsArr(newCardsArr);
+            await setCardsArr(newCardsArr);
         };
         shuffleCards();
     }, []);
 
     const generate = async (temp) => {
-        let random = (Math.random() * 6).toFixed(0);
-        console.log(random);
-        if(temp.includes(await random)) {
-            generate(temp);
+        let random = await (Math.random() * 5).toFixed(0);
+        if(temp.includes(await cardsArr[random])) {
+            await generate(temp);
         } else {
-            return random;
+            console.log("random: " + random);
+            return await random;
         }
     }
 

@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.f0be4198.css",
+    "main.js": "/react-gh-pages/static/js/main.69130d6a.js",
+    "static/js/787.079dd69e.chunk.js": "/react-gh-pages/static/js/787.079dd69e.chunk.js",
+    "static/media/border-collie.jpg": "/react-gh-pages/static/media/border-collie.551e42995a414c44cd63.jpg",
+    "static/media/maltipoo.jpg": "/react-gh-pages/static/media/maltipoo.35abf05e92e8dba05d78.jpg",
+    "static/media/bull-dog.jpg": "/react-gh-pages/static/media/bull-dog.39607a19b47200bc9404.jpg",
+    "static/media/german-shepherd.jpg": "/react-gh-pages/static/media/german-shepherd.f4f92831fa1c77db06f2.jpg",
+    "static/media/husky.png": "/react-gh-pages/static/media/husky.8020c1c96ee7cf9a51b5.png",
+    "static/media/golden-retriever.jpg": "/react-gh-pages/static/media/golden-retriever.31b91b21bfe4c2d9035b.jpg",
+    "index.html": "/react-gh-pages/index.html",
+    "main.f0be4198.css.map": "/react-gh-pages/static/css/main.f0be4198.css.map",
+    "main.69130d6a.js.map": "/react-gh-pages/static/js/main.69130d6a.js.map",
+    "787.079dd69e.chunk.js.map": "/react-gh-pages/static/js/787.079dd69e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0be4198.css",
+    "static/js/main.69130d6a.js"
+  ]
+}

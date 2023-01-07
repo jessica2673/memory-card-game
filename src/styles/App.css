@@ -1,11 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@200&display=swap'); 
 * {
+    font-family: 'Inter', sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     background-color: rgb(188, 239, 239);
-}
-
-img {
-    height: 11em;
-    margin: auto;
 }
 
 /* component specific styling */
@@ -13,16 +10,21 @@ img {
     display: flex;
     justify-content: center;
     font-size: 3em;
-    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.2rem;
 }
 
-.Main {
+.info {
+    display: flex;
+    justify-content: center;
+    font-size: 1.1em;
+    padding-bottom: 1.2em;
 }
 
 .modal {
-    background:#dbe0e2; 
-    left: 35%;
-    top: 30%;
+    background:#deecf2; 
+    left: 26%;
+    top: 35%;
     position: absolute; 
     z-index: 2;
     padding: 2em 5em 2em 5em; 
@@ -31,14 +33,23 @@ img {
 }
 
 .modal > h2 {
-    background-color: #dbe0e2;
+    background-color: #deecf2;
     padding-bottom: 1em;
 }
 
-.modal > button {
+.restart {
     display: flex;
-    justify-content: center;
-    background-color: #dbe0e2;
+    margin: auto;
+    padding: 7px 15px 7px 15px;
+    border: none;
+    background-color: #e8f2f5;
+    font-size: 1em;
+    box-shadow: 0 0 6px grey;
+    border-radius: 3px;
+}
+
+.restart:hover {
+    background-color: #bdc6c8;
 }
 
 .Score {
@@ -48,11 +59,39 @@ img {
     font-size: 1.5em;
 }
 
+.currScore, .bestScore, .tries {
+    box-shadow: 0 0 6px 0 rgb(156, 149, 149);
+    padding: 10px;
+}
+
+.currScore {
+    background-color: rgb(252, 233, 255);
+}
+
+.bestScore {
+    background-color: rgb(255, 216, 222);
+}
+
+.tries {
+    background-color: rgb(255, 196, 205);
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    height: 11em;
+    margin: auto;
+}
+
 .Card {
     padding: 1em;
     background-color: aliceblue;
     border-radius: 3%;
     border: 2px grey solid;
+}
+
+.Card:hover {
+    background-color: #dbe5e7;
 }
 
 .CardGrid {

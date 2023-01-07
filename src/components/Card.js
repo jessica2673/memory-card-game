@@ -11,7 +11,9 @@ const alias = [border, bulldog, german, golden, husky, maltipoo];
 
 const Card = (props) => {
     return (
-        <img src={alias[originals.indexOf(props.source)]} onClick={props.handleClick} alt={props.title}/>
+        <div className="Card">
+            <img src={alias[originals.indexOf(props.source)]} onClick={props.handleClick} alt={props.title}/>
+        </div>
     );
 }
 

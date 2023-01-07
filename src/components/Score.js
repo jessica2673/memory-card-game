@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import Card from './Card';
+import React from "react";
 
 const Score = (props) => {
     return (
-        <React.Fragment>
-            {props.score}
-            {props.best}
-        </React.Fragment>
+        <div className='Score'>
+            <div>Current score: {props.score}</div>
+            <div>Best score: {props.best}</div>
+        </div>
     )
 }
 

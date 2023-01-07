@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    background-color: rgb(188, 239, 239);
+}
+
+img {
+    height: 11em;
+    margin: auto;
+}
+
+/* component specific styling */
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    padding-bottom: 1.5rem;
+}
+
+.Main {
+}
+
+.modal {
+    background:#dbe0e2; 
+    left: 35%;
+    top: 30%;
+    position: absolute; 
+    z-index: 2;
+    padding: 2em 5em 2em 5em; 
+    border-radius: 3px;
+    box-shadow:0 0 8px rgba(5, 2, 33, 0.525)
+}
+
+.modal > h2 {
+    background-color: #dbe0e2;
+    padding-bottom: 1em;
+}
+
+.modal > button {
+    display: flex;
+    justify-content: center;
+    background-color: #dbe0e2;
+}
+
+.Score {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    font-size: 1.5em;
+}
+
+.Card {
+    padding: 1em;
+    background-color: aliceblue;
+    border-radius: 3%;
+    border: 2px grey solid;
+}
+
+.CardGrid {
+    margin: auto;
+    padding: 2em 5em 2em 5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+}
+
+

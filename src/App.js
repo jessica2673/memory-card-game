@@ -1,11 +1,11 @@
 import React from "react";
-import Score from "./components/Score";
-import Card from "./components/Card";
 import Main from "./components/Main";
+import './styles/App.css'
 
 function App(){
   return (
     <React.Fragment>
+      <div className="title">Memory Game</div>
       <Main />
     </React.Fragment>
   );
